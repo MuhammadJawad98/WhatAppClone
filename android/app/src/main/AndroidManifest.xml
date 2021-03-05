@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.devexppert.whatsappclone">
-   <application
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
         android:label="whatsappclone"
         android:icon="@mipmap/ic_launcher">
         <activity
