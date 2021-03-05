@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:whatsappclone/screens/WhatsAppHome%20.dart';
 import 'screens/otp_screen.dart';
+
 List<CameraDescription> cameras;
 
 Future<Null> main() async {
@@ -11,7 +12,6 @@ Future<Null> main() async {
   cameras = await availableCameras();
   runApp(new MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -24,16 +24,21 @@ class MyApp extends StatelessWidget {
         accentColor: new Color(0xff25D366),
       ),
       debugShowCheckedModeBanner: false,
-      home:new SplashScreen(
+      home: new SplashScreen(
           seconds: 5,
           navigateAfterSeconds: MyHomePage(title: 'WhatsApp'),
-          title: new Text('WhatsApp',style: TextStyle(color: Colors.white,fontSize: 25,fontFamily: 'assets/fonts/overpass_regular.otf'),),
+          title: new Text(
+            'WhatsApp',
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 25,
+                fontFamily: 'assets/fonts/overpass_regular.otf'),
+          ),
           image: new Image.asset('assets/logo.png'),
           backgroundColor: new Color(0xff075E54),
           styleTextUnderTheLoader: new TextStyle(),
           photoSize: 100.0,
-          loaderColor: Colors.white
-      ),
+          loaderColor: Colors.white),
       routes: <String, WidgetBuilder>{
         '/otpScreen': (BuildContext ctx) => OtpScreen(),
         '/homeScreen': (BuildContext ctx) => WhatsAppHome(),
@@ -56,17 +61,21 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return FutureBuilder<FirebaseUser>(
         future: FirebaseAuth.instance.currentUser(),
-        builder: (BuildContext context, AsyncSnapshot<FirebaseUser> snapshot){
-          if (snapshot.hasData){
+        builder: (BuildContext context, AsyncSnapshot<FirebaseUser> snapshot) {
+          if (snapshot.hasData) {
             FirebaseUser user = snapshot.data; // this is your user instance
             /// is because there is user already logged
-            return WhatsAppHome(cameras: cameras,);
+            return WhatsAppHome(
+              cameras: cameras,
+            );
           }
+
           /// other way there is no user logged.
           return
-            // WelcomeScreen();
-            WhatsAppHome(cameras: cameras,);
-        }
-    );
+              // WelcomeScreen();
+              WhatsAppHome(
+            cameras: cameras,
+          );
+        });
   }
 }
