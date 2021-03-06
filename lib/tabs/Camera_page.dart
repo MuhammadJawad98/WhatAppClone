@@ -1,5 +1,4 @@
-import 'package:camera/camera.dart';
-import 'package:flutter/material.dart';
+import 'file:///D:/app/whatsappclone/whatsappclone/lib/exportLibraries/custom_widgets.dart';
 class CameraPage extends StatefulWidget {
   final List<CameraDescription> cameras;
 

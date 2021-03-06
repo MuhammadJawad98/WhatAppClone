@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'authenticationScreen.dart';
+import 'file:///D:/app/whatsappclone/whatsappclone/lib/exportLibraries/custom_widgets.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override

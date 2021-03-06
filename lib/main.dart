@@ -1,9 +1,4 @@
-import 'package:camera/camera.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:splashscreen/splashscreen.dart';
-import 'package:whatsappclone/screens/WhatsAppHome%20.dart';
-import 'screens/otp_screen.dart';
+import 'exportLibraries/custom_widgets.dart';
 
 List<CameraDescription> cameras;
 
@@ -23,6 +18,9 @@ class MyApp extends StatelessWidget {
         primaryColor: new Color(0xff075E54),
         accentColor: new Color(0xff25D366),
       ),
+
+      onGenerateRoute: generateRoute,
+      initialRoute: welcomeRoute,
       debugShowCheckedModeBanner: false,
       home: new SplashScreen(
           seconds: 5,

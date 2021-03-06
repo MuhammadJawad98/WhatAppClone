@@ -1,8 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
-import 'package:whatsappclone/model/ChatModel.dart';
-import 'package:whatsappclone/model/StatusModel.dart';
-import 'package:whatsappclone/tabs/store_page_view.dart';
+import 'file:///D:/app/whatsappclone/whatsappclone/lib/exportLibraries/custom_widgets.dart';
 
 class StatusListWidget extends StatefulWidget {
   final ChatModel chatmodel;

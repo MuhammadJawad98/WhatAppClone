@@ -1,10 +1,6 @@
-import 'dart:developer';
 import 'dart:math';
 
-import 'package:flutter/material.dart';
-import 'package:story_view/controller/story_controller.dart';
-import 'package:story_view/widgets/story_view.dart';
-import 'package:whatsappclone/model/StatusModel.dart';
+import 'file:///D:/app/whatsappclone/whatsappclone/lib/exportLibraries/custom_widgets.dart';
 
 class StoryPageView extends StatefulWidget {
   final StatusModel statusModel;

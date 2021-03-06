@@ -1,9 +1,5 @@
-import 'package:camera/camera.dart';
-import 'package:flutter/material.dart';
-import 'package:whatsappclone/tabs/CameraPage.dart';
-import 'package:whatsappclone/tabs/call_screen.dart';
-import 'package:whatsappclone/tabs/chat_screen.dart';
-import 'package:whatsappclone/tabs/status_screen.dart';
+import 'file:///D:/app/whatsappclone/whatsappclone/lib/exportLibraries/custom_widgets.dart';
+
 class WhatsAppHome extends StatefulWidget {
   final List<CameraDescription> cameras;
   WhatsAppHome({this.cameras});

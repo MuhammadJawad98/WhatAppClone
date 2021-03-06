@@ -1,12 +1,5 @@
-import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-import 'package:pin_entry_text_field/pin_entry_text_field.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:whatsappclone/services/database.dart';
+import 'file:///D:/app/whatsappclone/whatsappclone/lib/exportLibraries/custom_widgets.dart';
 
 // ignore: must_be_immutable
 class OtpScreen extends StatefulWidget {

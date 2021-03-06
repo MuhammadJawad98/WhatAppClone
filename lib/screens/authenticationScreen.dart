@@ -1,9 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:whatsappclone/widget/country_picker.dart';
-import 'package:whatsappclone/widget/custom_button.dart';
+import 'file:///D:/app/whatsappclone/whatsappclone/lib/exportLibraries/custom_widgets.dart';
+
 
 class PhoneAuthenticationScreen extends StatefulWidget {
   @override
