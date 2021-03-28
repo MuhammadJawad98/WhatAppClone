@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'file:///D:/app/whatsappclone/whatsappclone/lib/exportLibraries/custom_widgets.dart';
+import 'package:whatsappclone/services/helperfunctions.dart';
 
 // ignore: must_be_immutable
 class OtpScreen extends StatefulWidget {
@@ -177,7 +178,8 @@ DatabaseMethods databaseMethods = new DatabaseMethods();
       };
       databaseMethods.addUserInfo(userDataMap);
       print('you are doing great.....');
-
+      HelperFunctions.saveUserLoggedInSharedPreference(true);
+      HelperFunctions.saveUserNumberSharedPreference(phoneNo);
       Navigator.pushReplacementNamed(context, '/homeScreen');
     } catch (e) {
       handleError(e as PlatformException);

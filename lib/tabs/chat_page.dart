@@ -20,17 +20,17 @@ class ChatScreenState extends State<ChatScreen> {
           new ListTile(
             onTap: () => Navigator.pushNamed(context, ChatRoom),
             leading: CachedNetworkImage(
-              imageUrl: duviewedmmyData[i].avatarUrl,
+              imageUrl: dummyData[i].avatarUrl,
               imageBuilder: (context, imageProvider) => Container(
                 width: 50.0,
                 height: 50.0,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image:
-                      DecorationImage(image: imageProvider, fit: BoxFit.cover),
+                  DecorationImage(image: imageProvider, fit: BoxFit.cover),
                 ),
               ),
-              placeholder: (context, url) => CircularProgressIndicator(),
+              placeholder: (context, url) => Icon(Icons.person),
               errorWidget: (context, url, error) => Icon(Icons.error),
             ),
             title: new Row(
@@ -59,25 +59,4 @@ class ChatScreenState extends State<ChatScreen> {
     );
   }
 
-  Future<bool> _onWillPop() {
-    return showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: Text('Are you sure?'),
-            content: Text('Do you want to exit an App'),
-            actions: <Widget>[
-              FlatButton(
-                onPressed: () => Navigator.of(context).pop(false),
-                child: Text('No'),
-              ),
-              FlatButton(
-                onPressed: () => exit(0),
-                /*Navigator.of(context).pop(true)*/
-                child: Text('Yes'),
-              ),
-            ],
-          ),
-        ) ??
-        false;
-  }
 }

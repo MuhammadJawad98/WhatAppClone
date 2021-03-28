@@ -18,7 +18,7 @@ class _PhoneAuthenticationScreenState extends State<PhoneAuthenticationScreen> {
       showErrorDialog(context, 'Contact number can\'t be empty.');
     } else {
       final responseMessage =
-      await Navigator.pushNamed(context, '/otpScreen', arguments: '$_dialCode${_contactEditingController.text}');
+      await Navigator.pushNamed(context, OTPScreen , arguments: '$_dialCode${_contactEditingController.text}');
       if (responseMessage != null) {
         showErrorDialog(context, responseMessage as String);
 
@@ -139,6 +139,7 @@ class _PhoneAuthenticationScreenState extends State<PhoneAuthenticationScreen> {
                         headerText: 'Select Country',
                         headerBackgroundColor: Theme.of(context).primaryColor,
                         headerTextColor: Colors.white,
+
                       ),
                       SizedBox(
                         width: screenWidth * 0.03,

@@ -33,6 +33,7 @@ dependencies:
   story_view: ^0.12.3
   splashscreen:
   cached_network_image: ^2.5.0
+  fluttertoast: ^8.0.3
 
 
 
@@ -58,6 +59,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/whatsapp.png
+    - assets/images/
+    - assets/images/search_white.png
+    - assets/images/send.png
     - assets/countrycodes.json
     - assets/logo.png
 

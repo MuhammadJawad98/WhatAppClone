@@ -1,3 +1,5 @@
+import 'package:whatsappclone/services/helperfunctions.dart';
+
 import 'exportLibraries/custom_widgets.dart';
 
 List<CameraDescription> cameras;
@@ -8,17 +10,23 @@ Future<Null> main() async {
   runApp(new MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "WhatsApp",
       theme: new ThemeData(
-        primaryColor: new Color(0xff075E54),
-        accentColor: new Color(0xff25D366),
+        primaryColor: Color(0xff075E54),
+        accentColor: Color(0xff25D366),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-
       onGenerateRoute: generateRoute,
       initialRoute: welcomeRoute,
       debugShowCheckedModeBanner: false,
@@ -55,25 +63,57 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  bool userIsLoggedIn;
+
+  @override
+  void initState() {
+    getLoggedInState();
+    super.initState();
+  }
+
+  getLoggedInState() async {
+    await HelperFunctions.getUserLoggedInSharedPreference().then((value) {
+      setState(() {
+        userIsLoggedIn = value;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<FirebaseUser>(
-        future: FirebaseAuth.instance.currentUser(),
-        builder: (BuildContext context, AsyncSnapshot<FirebaseUser> snapshot) {
-          if (snapshot.hasData) {
-            FirebaseUser user = snapshot.data; // this is your user instance
-            /// is because there is user already logged
-            return WhatsAppHome(
-              cameras: cameras,
-            );
-          }
+    return  userIsLoggedIn != null ?  userIsLoggedIn ? WhatsAppHome() :  WelcomeScreen()
+        : Container(
+      child: WelcomeScreen(),
+    );
 
-          /// other way there is no user logged.
-          return
-              // WelcomeScreen();
-              WhatsAppHome(
-            cameras: cameras,
-          );
-        });
+
+
+
+
+
+
+
+
+
+
+      // FutureBuilder<FirebaseUser>(
+      //   future: FirebaseAuth.instance.currentUser(),
+      //   builder: (BuildContext context, AsyncSnapshot<FirebaseUser> snapshot) {
+      //     if (snapshot.hasData) {
+      //       FirebaseUser user = snapshot.data; // this is your user instance
+      //       /// is because there is user already logged
+      //       return WhatsAppHome(
+      //         cameras: cameras,
+      //       );
+      //     }
+      //
+      //     /// other way there is no user logged.
+      //     return
+      //         WelcomeScreen();
+      //       //   WhatsAppHome(
+      //       // cameras: cameras,
+      //     // );
+      //   });
   }
 }
