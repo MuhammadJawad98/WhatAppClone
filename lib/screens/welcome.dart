@@ -19,7 +19,7 @@ class WelcomeScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             Image.asset(
-              'assets/images/whatsapp.png',
+              'assets/images/whatsappimg.png',
               height: MediaQuery.of(context).size.height * 0.4,
             ),
             // Flexible(child: Text("Read our Privacy Policy. Tap'Agree and continue' to accept  the Term of Servcie.",style: TextStyle(color: Colors.green),))

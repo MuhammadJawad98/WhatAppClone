@@ -48,6 +48,7 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
         appBar: AppBar(
           title: Text("WhatsApp"),
           elevation: 0.7,
+
           bottom: TabBar(
             controller: _tabController,
             indicatorColor: Colors.white,

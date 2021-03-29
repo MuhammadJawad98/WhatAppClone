@@ -86,17 +86,6 @@ class _MyHomePageState extends State<MyHomePage> {
         : Container(
       child: WelcomeScreen(),
     );
-
-
-
-
-
-
-
-
-
-
-
       // FutureBuilder<FirebaseUser>(
       //   future: FirebaseAuth.instance.currentUser(),
       //   builder: (BuildContext context, AsyncSnapshot<FirebaseUser> snapshot) {

@@ -180,7 +180,7 @@ DatabaseMethods databaseMethods = new DatabaseMethods();
       print('you are doing great.....');
       HelperFunctions.saveUserLoggedInSharedPreference(true);
       HelperFunctions.saveUserNumberSharedPreference(phoneNo);
-      Navigator.pushReplacementNamed(context, '/homeScreen');
+      Navigator.pushReplacementNamed(context, WhatsAppHomeRoute);
     } catch (e) {
       handleError(e as PlatformException);
     }
