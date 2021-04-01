@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsappclone/model/ConversationModel.dart';
+import 'package:whatsappclone/model/conversation_model.dart';
 import 'package:whatsappclone/widget/widget.dart';
 
 class Chat extends StatefulWidget {
